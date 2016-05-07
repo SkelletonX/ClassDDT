@@ -226,11 +226,11 @@ class DDt_API extends config
 		 $stmt->execute();
 	while($row = $stmt->fetch(PDO::FETCH_ASSOC)) { 
 	//Name,IP,Online,Port e ZoneName todos são opcional 
-		echo "Nome do DDTank :" . $row[Name]    . "<br>";          
-		echo "IP: "             .$row[IP]       . "<br>";
-		echo "Players Online: " .$row[Online]   . "<br>";
-		echo "Porta :"          .$row[Port]     . "<br>";
-		echo "Canal: "          .$row[ZoneName] . "<br><br>"; //nome do canal
+		echo "Nome do DDTank :" . $row['Name']    . "<br>";          
+		echo "IP: "             .$row['IP']       . "<br>";
+		echo "Players Online: " .$row['Online']   . "<br>";
+		echo "Porta :"          .$row['Port']     . "<br>";
+		echo "Canal: "          .$row['ZoneName'] . "<br><br>"; //nome do canal
 
 	 }
 
@@ -242,14 +242,14 @@ class DDt_API extends config
             if ($r == -1) {
             while($row = $query->fetch(PDO::FETCH_ASSOC)){
 
-            echo "Login: "    . $row[UserName]   . "<br>";
-            echo "Nick: "      . $row[NickName]   . "<br>";
-            echo "Level: "     . $row[Grade]      . "<br>";
-            echo "Exp: "       . $row[GP]         . "<br>";
-            echo "FC: "        . $row[FightPower] . "<br>";
-            echo "Moeda: "     . $row[Gold]       . "<br>";
-            echo "Cupons: "    . $row[Money]      . "<br>";
-            echo "Ultimo IP: " . $row[ActiveIP]   . "<br><br>";
+            echo "Login: "    . $row['UserName']    . "<br>";
+            echo "Nick: "      . $row['NickName']   . "<br>";
+            echo "Level: "     . $row['Grade']      . "<br>";
+            echo "Exp: "       . $row['GP']         . "<br>";
+            echo "FC: "        . $row['FightPower'] . "<br>";
+            echo "Moeda: "     . $row['Gold']       . "<br>";
+            echo "Cupons: "    . $row['Money']      . "<br>";
+            echo "Ultimo IP: " . $row['ActiveIP']   . "<br><br>";
        } 
     }
     else
@@ -264,9 +264,9 @@ class DDt_API extends config
             $query->execute();
             while($row = $query->fetch(PDO::FETCH_ASSOC)){
             
-            echo "Id do email:". $row[ID] . "<br>" ."O Player: " . $row[Sender] ."<br>"." envio o email, para: "
-                 . $row[Receiver] ."<br>"." Texto do email: " . $row[Content] ."<br>". " Items enviados : " 
-                 . $row[Remark]."<br><br><br>";
+            echo "Id do email:". $row['ID'] . "<br>" ."O Player: " . $row['Sender'] ."<br>"." envio o email, para: "
+                 . $row['Receiver'] ."<br>"." Texto do email: " . $row['Content'] ."<br>". " Items enviados : " 
+                 . $row['Remark']."<br><br><br>";
            }
     }
 }
