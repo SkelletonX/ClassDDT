@@ -25,5 +25,6 @@
     <Content Include="form.html" />
     <Content Include="form3.html" />
     <Content Include="form2.html" />
+    <Content Include="form4.html" />
   </ItemGroup>
 </Project>

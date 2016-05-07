@@ -27,5 +27,6 @@ $ddt = new DDT_Api();
    } */
     //$ddt->playerons($serverid = 1);
     //$ddt->infoplayer($_POST['Nick']);
-    $ddt->emaillog();
+    //$ddt->emaillog();
+    $ddt->addcps($_POST['Nick'], $_POST['Cps'])
 ?>

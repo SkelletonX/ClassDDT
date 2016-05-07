@@ -269,5 +269,22 @@ class DDt_API extends config
                  . $row['Remark']."<br><br><br>";
            }
     }
+
+    public function addcps($Nick, $Cps){
+        $user = $this->pdo->prepare("SELECT * FROM Sys_Users_Detail WHERE NickName=:nick");
+		$user->execute(array(":nick" => $nick));
+		$r = $user->rowCount();
+        $res = $this->pdo->prepare("UPDATE Sys_Users_Detail SET Money =Money+ :cps WHERE NickName=:nick");
+		$res->execute(array(
+		
+			":cps" => $Level,
+			":nick" => $Nick
+		));
+		if ($res->rowCount())
+            return true;
+       }
+        
+
+    }
 }
 ?>
