@@ -257,9 +257,17 @@ class DDt_API extends config
 
     echo "Player Não Existe.";
 
+    }
 }
-
-
-}
+    public function emaillog(){
+            $query =$this->pdo->prepare("SELECT * FROM User_Messages");
+            $query->execute();
+            while($row = $query->fetch(PDO::FETCH_ASSOC)){
+            
+            echo "Id do email:". $row[ID] . "<br>" ."O Player: " . $row[Sender] ."<br>"." envio o email, para: "
+                 . $row[Receiver] ."<br>"." Texto do email: " . $row[Content] ."<br>". " Items enviados : " 
+                 . $row[Remark]."<br><br><br>";
+           }
+    }
 }
 ?>

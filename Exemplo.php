@@ -26,6 +26,6 @@ $ddt = new DDT_Api();
                 echo "<meta charset='utf-8'><script>alert('OK!');</script>";
    } */
     //$ddt->playerons($serverid = 1);
-    $ddt->infoplayer($_POST['Nick']);
-
+    //$ddt->infoplayer($_POST['Nick']);
+    $ddt->emaillog();
 ?>
