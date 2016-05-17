@@ -283,8 +283,16 @@ class DDt_API extends config
 		if ($res->rowCount())
             return true;
        }
+       public function adddescript($Nick, $honor){
+        
+        $user = $this->pdo->prepare("SELECT * FROM Sys_Users_Detail WHERE NickName=:nick");
+        $user->execute(array(":nick" => $Nick));
+        $exe = $user->rowCount();
         
 
-    }
+
+
+}
+            }
 }
 ?>
