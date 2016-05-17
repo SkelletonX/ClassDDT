@@ -226,7 +226,7 @@ class DDt_API extends config
 		 $stmt->execute();
 	while($row = $stmt->fetch(PDO::FETCH_ASSOC)) { 
 	//Name,IP,Online,Port e ZoneName todos são opcional 
-		echo "Nome do DDTank :" . $row['Name']    . "<br>";          
+		echo "Nome do DDTank :" .$row['Name']    . "<br>";          
 		echo "IP: "             .$row['IP']       . "<br>";
 		echo "Players Online: " .$row['Online']   . "<br>";
 		echo "Porta :"          .$row['Port']     . "<br>";
@@ -296,6 +296,89 @@ class DDt_API extends config
 		if ($res->rowCount())
             return true;
        }
-      
-   }
+    public function loadimage($image,$loaivp,$sex)
+{
+	switch($sex)
+	{
+		case 1:
+			$ml = 'm';
+		break;
+		case 2:
+			$ml = 'f';
+		break;
+		default:
+			$ml = 'f';
+		break;
+	}
+	switch($loaivp)
+	{
+		case 1:
+			$link = 'equip/'.$ml.'/head/'.$image.'/icon_1.png';
+		break;
+		case 2:
+			$link = 'equip/'.$ml.'/glass/'.$image.'/icon_1.png';
+		break;
+		case 3:
+			$link = 'equip/'.$ml.'/hair/'.$image.'/icon_1.png';
+		break;
+		case 5:
+			$link = 'equip/'.$ml.'/cloth/'.$image.'/icon_1.png';
+		break;
+		case 6:
+			$link = 'equip/'.$ml.'/face/'.$image.'/icon_1.png';
+		break;
+		case 7:
+			$link = 'arm/'.$image.'/00.png';
+		break;
+		case 8:
+			$link = 'equip/armlet/'.$image.'/icon.png';
+		break;
+		case 9:
+			$link = 'equip/ring/'.$image.'/icon.png';
+		break;
+		case 11:
+			$link = 'unfrightprop/'.$image.'/icon.png';
+		break;
+		case 13:
+			$link = 'equip/'.$ml.'/suits/'.$image.'/icon_1.png';
+		break;
+		case 15:
+			$link = 'equip/wing/'.$image.'/icon.png';
+		break;
+		case 14:
+			$link = 'necklace/'.$image.'/icon.png';
+		break;
+		case 17;
+			$link = 'equip/offhand/'.$image.'/icon.png';
+		break;
+		case 16;
+			$link = 'specialprop/chatBall/'.$image.'/icon.png';
+		break;
+		case 19;
+			$link = 'prop/'.$image.'/icon.png';
+		break;
+		case 20;
+			$link = 'prop/'.$image.'/icon.png';
+		break;
+		case 35;
+			$link = 'unfrightprop/'.$image.'/icon.png';
+		break;
+		case 34;
+			$link = 'unfrightprop/'.$image.'/icon.png';
+		break;
+		case 50;
+			$link = 'petequip/arm/'.$image.'/icon.png';
+		break;
+		case 52;
+			$link = 'petequip/cloth/'.$image.'/icon.png';
+		break;
+		case 51;
+			$link = 'petequip/hat/'.$image.'/icon.png';
+		break;
+		default:
+			$link = NULL;
+		break;
+	}
+	return $link;
+}
 ?>
