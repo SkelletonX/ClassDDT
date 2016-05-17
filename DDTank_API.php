@@ -283,6 +283,19 @@ class DDt_API extends config
 		if ($res->rowCount())
             return true;
        }
+    public function addgold($Nick, $Gold){
+        $user = $this->pdo->prepare("SELECT * FROM Sys_Users_Detail WHERE NickName=:nick");
+		$user->execute(array(":nick" => $Nick));
+		$r = $user->rowCount();
+        $res = $this->pdo->prepare("UPDATE Sys_Users_Detail SET Gold =Gold+ :cps WHERE NickName=:nick");
+		$res->execute(array(
+		
+			":Gold" => $Gold,
+			":nick" => $Nick
+		));
+		if ($res->rowCount())
+            return true;
+       }
       
    }
 ?>
