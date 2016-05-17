@@ -272,27 +272,17 @@ class DDt_API extends config
 
     public function addcps($Nick, $Cps){
         $user = $this->pdo->prepare("SELECT * FROM Sys_Users_Detail WHERE NickName=:nick");
-		$user->execute(array(":nick" => $nick));
+		$user->execute(array(":nick" => $Nick));
 		$r = $user->rowCount();
         $res = $this->pdo->prepare("UPDATE Sys_Users_Detail SET Money =Money+ :cps WHERE NickName=:nick");
 		$res->execute(array(
 		
-			":cps" => $Level,
+			":cps" => $Cps,
 			":nick" => $Nick
 		));
 		if ($res->rowCount())
             return true;
        }
-       public function adddescript($Nick, $honor){
-        
-        $user = $this->pdo->prepare("SELECT * FROM Sys_Users_Detail WHERE NickName=:nick");
-        $user->execute(array(":nick" => $Nick));
-        $exe = $user->rowCount();
-        
-
-
-
-}
-            }
-}
+      
+   }
 ?>
